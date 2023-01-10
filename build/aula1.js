@@ -1,0 +1,4 @@
+"use strict";
+const carro = "Ferrari";
+console.log("Carro" + carro);
+// Comentario
