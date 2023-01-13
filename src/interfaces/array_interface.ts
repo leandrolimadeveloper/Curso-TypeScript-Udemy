@@ -18,7 +18,7 @@ interface NamesProps {
 
 let backend: NamesProps = {
     technology: [
-        { id: '15', name: 'React', hashtag: ['react', 'lib']},
+        { id: '15', name: 'Node', hashtag: ['node', 'api']},
         { id: '18', name: 'Go', hashtag: ['backend', 'api', 'microservices']}
     ]
 }
