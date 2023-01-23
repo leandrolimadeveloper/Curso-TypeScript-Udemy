@@ -9,13 +9,14 @@ function nameValidate(size) {
     return (target, key) => {
         console.log(key);
         let valor = target[key];
+        console.log(valor);
         const getter = () => valor;
         const setter = (value) => {
             if (value === '') {
                 console.log('Você não pode deixar em branco');
             }
             else if (value.length < size) {
-                console.log(`Não pode ser menor que ${size} caracteres`);
+                console.log(`O campo ${key} ${value} não pode ser menor que ${size} caracteres`);
             }
             else {
                 valor = value;
@@ -28,12 +29,16 @@ function nameValidate(size) {
     };
 }
 class OnlineGame {
-    constructor(name) {
+    constructor(name, description) {
         this.name = name;
+        this.description = description;
     }
 }
 __decorate([
     nameValidate(5)
 ], OnlineGame.prototype, "name", void 0);
-const game1 = new OnlineGame('abcw');
+__decorate([
+    nameValidate(15)
+], OnlineGame.prototype, "description", void 0);
+const game1 = new OnlineGame('GTA', 'GTA Online');
 console.log(game1.name);
