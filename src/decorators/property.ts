@@ -3,6 +3,8 @@ function nameValidate(size: number) {
         console.log(key)
 
         let valor = target[key]
+
+        console.log(valor)
         
         const getter = () => valor
 
@@ -10,7 +12,7 @@ function nameValidate(size: number) {
             if (value === '') {
                 console.log('Você não pode deixar em branco')
             } else if (value.length < size) {
-                console.log(`Não pode ser menor que ${size} caracteres`)
+                console.log(`O campo ${key} ${value} não pode ser menor que ${size} caracteres`)
             } else {
                 valor = value
             }
@@ -27,10 +29,14 @@ class OnlineGame {
     @nameValidate(5)
     name: string
 
-    constructor(name: string) {
+    @nameValidate(15)
+    description: string
+
+    constructor(name: string, description: string) {
         this.name = name
+        this.description = description
     }
 }
 
-const game1 = new OnlineGame('GTA')
+const game1 = new OnlineGame('GTA', 'GTA Online')
 console.log(game1.name)
